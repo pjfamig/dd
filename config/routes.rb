@@ -6,4 +6,5 @@ Dd::Application.routes.draw do
   get 'jobs' => 'static_pages#jobs'
   get 'register'  => 'users#new'
   
+  resources :users
 end
