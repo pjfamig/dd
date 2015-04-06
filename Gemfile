@@ -32,3 +32,4 @@ end
 gem 'ancestry'
 gem 'rmagick', :require => 'RMagick'
 gem 'carrierwave'
+gem 'bootstrap-sass',       '3.2.0.0'

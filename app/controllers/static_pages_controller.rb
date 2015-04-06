@@ -4,4 +4,7 @@ class StaticPagesController < ApplicationController
 
   def rules
   end
+  
+  def jobs
+  end
 end

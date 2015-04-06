@@ -29,6 +29,8 @@ GEM
       activerecord (>= 3.0.0)
     arel (4.0.2)
     bcrypt-ruby (3.1.2)
+    bootstrap-sass (3.2.0.0)
+      sass (~> 3.2)
     builder (3.1.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -165,6 +167,7 @@ PLATFORMS
 DEPENDENCIES
   ancestry
   bcrypt-ruby (= 3.1.2)
+  bootstrap-sass (= 3.2.0.0)
   capybara (= 2.1.0)
   carrierwave
   coffee-rails (= 4.1.0)
