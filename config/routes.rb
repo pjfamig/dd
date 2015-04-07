@@ -1,4 +1,6 @@
 Dd::Application.routes.draw do
+  get "password_resets/new"
+  get "password_resets/edit"
   get "sessions/new"
   root 'static_pages#about'
 
@@ -10,5 +12,6 @@ Dd::Application.routes.draw do
   post   'login'    => 'sessions#create'
   delete 'logout'   => 'sessions#destroy'
   
+  resources :password_resets, only: [:new, :create, :edit, :update]
   resources :users
 end
