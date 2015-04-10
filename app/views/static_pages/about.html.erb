@@ -1,7 +1,14 @@
 <% provide(:title, "About") %>
 
-<div>
 
+<% if logged_in? %>
+  <div class="col-md-3">
+    <section class="post_form">
+	  <%= render 'shared/post_form' %>
+	</section>
+  </div>
+
+<div class="col-md-9">
 <p><a href="http://assets.sbnation.com/assets/1313966/amended-verdict1.pdf">[VERDICT] Jury to Apple: You win, we think</a></p>
 	
 <p><a href="http://www.fosspatents.com/2014/02/ipcoms-22-billion-lawsuit-against-apple.html">IPCom's $2.2 billion claim against Apple thrown out by German court</a></p>
@@ -39,3 +46,46 @@
 <p><a href="http://www.techdirt.com/articles/20140226/12103626359/horrific-appeals-court-ruling-says-actress-has-copyright-interest-innocence-muslims-orders-youtube-to-delete-every-copy.shtml">RULING: Garcia v. Google ruling sends shockwaves across copyright system</a></p>	
 </div>
 
+
+
+<% else %>
+
+<div>
+<p><a href="http://assets.sbnation.com/assets/1313966/amended-verdict1.pdf">[VERDICT] Jury to Apple: You win, we think</a></p>
+	
+<p><a href="http://www.fosspatents.com/2014/02/ipcoms-22-billion-lawsuit-against-apple.html">IPCom's $2.2 billion claim against Apple thrown out by German court</a></p>
+	
+<p><a href="http://finance.yahoo.com/news/ftc-says-considering-lawmakers-concerns-herbalife-230913625--sector.html">FTC considering fraud investigation against Herbalife</a></p>
+	
+<p><a href="http://news.yahoo.com/arizona-vote-moves-gay-rights-mainstream-154127019.html">[BREAKING] Arizona Gov. Jan Brewer vetoes "religious rights" bill</a></p>
+	
+<p><a href="	http://www.adweek.com/news/technology/senate-bill-targeting-patent-trolls-fast-track-156019">Senate bill targeting patent trolls on fast track</a></p>
+
+<p><a href="http://www.techdirt.com/articles/20140226/12103626359/horrific-appeals-court-ruling-says-actress-has-copyright-interest-innocence-muslims-orders-youtube-to-delete-every-copy.shtml">RULING: Garcia v. Google ruling sends shockwaves across copyright system</a></p>
+	
+<p><a href="http://assets.sbnation.com/assets/1313966/amended-verdict1.pdf">[VERDICT] Jury to Apple: You win, we think</a></p>
+	
+<p><a href="http://www.fosspatents.com/2014/02/ipcoms-22-billion-lawsuit-against-apple.html">IPCom's $2.2 billion claim against Apple thrown out by German court</a></p>
+	
+<p><a href="http://finance.yahoo.com/news/ftc-says-considering-lawmakers-concerns-herbalife-230913625--sector.html">FTC considering fraud investigation against Herbalife</a></p>
+	
+<p><a href="http://news.yahoo.com/arizona-vote-moves-gay-rights-mainstream-154127019.html">[BREAKING] Arizona Gov. Jan Brewer vetoes "religious rights" bill</a></p>
+	
+<p><a href="	http://www.adweek.com/news/technology/senate-bill-targeting-patent-trolls-fast-track-156019">Senate bill targeting patent trolls on fast track</a></p>
+
+<p><a href="http://www.techdirt.com/articles/20140226/12103626359/horrific-appeals-court-ruling-says-actress-has-copyright-interest-innocence-muslims-orders-youtube-to-delete-every-copy.shtml">RULING: Garcia v. Google ruling sends shockwaves across copyright system</a></p>
+
+<p><a href="http://assets.sbnation.com/assets/1313966/amended-verdict1.pdf">[VERDICT] Jury to Apple: You win, we think</a></p>
+	
+<p><a href="http://www.fosspatents.com/2014/02/ipcoms-22-billion-lawsuit-against-apple.html">IPCom's $2.2 billion claim against Apple thrown out by German court</a></p>
+	
+<p><a href="http://finance.yahoo.com/news/ftc-says-considering-lawmakers-concerns-herbalife-230913625--sector.html">FTC considering fraud investigation against Herbalife</a></p>
+	
+<p><a href="http://news.yahoo.com/arizona-vote-moves-gay-rights-mainstream-154127019.html">[BREAKING] Arizona Gov. Jan Brewer vetoes "religious rights" bill</a></p>
+	
+<p><a href="	http://www.adweek.com/news/technology/senate-bill-targeting-patent-trolls-fast-track-156019">Senate bill targeting patent trolls on fast track</a></p>
+
+<p><a href="http://www.techdirt.com/articles/20140226/12103626359/horrific-appeals-court-ruling-says-actress-has-copyright-interest-innocence-muslims-orders-youtube-to-delete-every-copy.shtml">RULING: Garcia v. Google ruling sends shockwaves across copyright system</a></p>	
+</div>
+
+<% end %>

@@ -14,4 +14,5 @@ Dd::Application.routes.draw do
   
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :users
+  resources :posts,          only: [:create, :destroy]
 end

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :posts
   attr_accessor :remember_token, :reset_token
   before_save { self.email = email.downcase }
   validates :username,  presence: true, length: { maximum: 50 }
@@ -8,7 +9,8 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, length: { minimum: 6 }, allow_blank: true  
-  
+  validate  :avatar_size
+    
   mount_uploader :avatar, AvatarUploader
   
   # Returns the hash digest of the given string.
@@ -58,5 +60,15 @@ class User < ActiveRecord::Base
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
   end
+  
+  
+  private
+  
+    # Validates the size of an uploaded picture.
+    def avatar_size
+      if avatar.size > 5.megabytes
+        errors.add(:avatar, "should be less than 5MB")
+      end
+    end
   
 end
