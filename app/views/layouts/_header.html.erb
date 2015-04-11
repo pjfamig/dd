@@ -27,9 +27,9 @@
     </nav>
 
 			</div>
+			
   </div>
 </header>
-
 
 <!-- Modal HTML -->
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
@@ -37,16 +37,21 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Confirmation</h4>
+                <h4 class="modal-title"><center>New Post</center></h4>
             </div>
             <div class="modal-body">
-                <p>Do you want to save changes you made to document before closing?</p>
-                <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+				<% if logged_in? %>
+				<section class="post_form">
+					  <%= render 'shared/post_form' %>
+				</section>
+				<% else %>
+					Not logged in - render shared/login_form
+				<% end %>
             </div>
-            <div class="modal-footer">
+  <!--          <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

@@ -1,8 +1,9 @@
 Dd::Application.routes.draw do
+  root 'static_pages#home'
+
   get "password_resets/new"
   get "password_resets/edit"
   get "sessions/new"
-  root 'static_pages#about'
 
   get 'about'       => 'static_pages#about'
   get 'rules'       => 'static_pages#rules'
