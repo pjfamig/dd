@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   end
 
   def home
+    @feed_items = Post.all
   end
 
   def rules

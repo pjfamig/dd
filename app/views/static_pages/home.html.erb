@@ -1,4 +1,8 @@
 <% provide(:title, "Home") %>
 
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+
+<% if @feed_items.any? %>
+  <ol class="posts">
+    <%= render @feed_items %>
+  </ol>
+<% end %>

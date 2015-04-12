@@ -1,8 +1,10 @@
 <li id="post-<%= post.id %>">
 <p>
   <a href="<%= post.url %>"><span class="headline"><%= post.headline %></span></a>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(post.created_at) %> ago.
+ 
+<span class="timestamp">
+<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>  <a href="">2 comments</a> | 
+ posted <%= time_ago_in_words(post.created_at) %> ago
   </span>
 </p>
 </li>
