@@ -11,8 +11,14 @@ class PostsController < ApplicationController
       flash[:success] = "Post created!"
       redirect_to root_url
     else
-      render 'static_pages/about'
+      render 'static_pages/home'
     end
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    @comments = @post.comments
+    @comment = Comment.new 
   end
 
   def destroy

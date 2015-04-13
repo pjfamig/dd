@@ -1,10 +1,13 @@
+<%= link_to post_path(post) do %>
 <li id="post-<%= post.id %>">
 <p>
   <a href="<%= post.url %>"><span class="headline"><%= post.headline %></span></a>
  
 <span class="timestamp">
-<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>  <a href="">2 comments</a> | 
+<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>  <%= link_to '2 comments', post %> | 
  posted <%= time_ago_in_words(post.created_at) %> ago
   </span>
 </p>
+
 </li>
+<% end %>

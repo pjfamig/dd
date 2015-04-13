@@ -1,0 +1,20 @@
+<% provide(:title, @post.headline.html_safe) %>
+
+<ol class="posts">
+  <%= render @post %>
+</ol>  
+	
+<% if @post.comments.any? %>	
+	<h5>Comments (<%= @post.comments.count %>)</h5>
+	<ol class="comments">
+	  <%= render @comments %>
+	</ol>
+<% end %>	
+	
+<% if logged_in? %>
+  <h5>Enter new comment</h5>
+	  <%= render 'shared/comment_form' %>
+<% else %>
+	<!-- Keep comment_form, but prompt for sign-up upon input? -->
+	Please <%= link_to 'login', login_path %> to post a comment. 
+<% end %>
