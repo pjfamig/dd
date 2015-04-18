@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   end
   
   def create
+    @feed_items = Post.all
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "Post created!"
