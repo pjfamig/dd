@@ -13,7 +13,7 @@
     <div class="container">
 		<div class="row">
 			<div class="col-sm-2 sidebar">
-				
+				<div class="hidden-xs">
 				<h5><span class="glyphicon glyphicon-star" aria-hidden="true">&nbsp;</span>
 					<% if current_page?(root_path) %>
 						News
@@ -36,6 +36,8 @@
 					<% end %>
 					</h5>
 				<%= render 'layouts/footer' %>
+				</div>
+				<!--<div class="visible-xs"><%= link_to 'News', root_path %> | <%= link_to 'Rules', rules_path %> | <%= link_to 'Jobs', jobs_path %></div> -->
 			</div>
 			<div class="col-sm-10 content">
 				<% flash.each do |message_type, message| %>

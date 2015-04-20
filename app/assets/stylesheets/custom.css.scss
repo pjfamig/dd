@@ -35,33 +35,75 @@ textarea {
 }
 
 .container {
-	max-width: 980px;
+	max-width: 960px;
 }
 
 .header {
 	padding-left: 0px;
+	min-height: 50px;
 	border-bottom-style: solid;
 	border-bottom: double #CCC;
 	background-color: #FFF;
 	box-shadow: 0px 2px 2px -2px rgba(0,0,0,.2);
 }
 
-.sidebar {
-   position: fixed;
-   h5 a {
-	color: #999;
-   }
-   a:hover {
-	color: #333;
-   }
-}
 
+
+@media (max-width: 768px) { 
+	body {
+		padding-top: 50px;
+	}
+
+	.posts li {
+		&:hover {
+		background-color: #f5f5f5;
+		}
+	}
+	
+	.posts p {
+		padding: 20px;
+	}
+	
+
+//.sidebar {
+//   position: fixed;
+//   top: 70px;
+//   left: 0px;
+//   background-color: #e8e8e8;
+//   height: 20px;
+//   width: 100%;
+//   h5 a {
+//	color: #999;
+//   }
+//   a:hover {
+//	color: #333;
+//   }
+//}
+}
 
 .content {
 	padding-left: 0px;
 	padding-right: 0px;
-	float: right;	
+	float: none;
 }
+
+@media (min-width: 768px) { 
+	.sidebar {
+		position: fixed;
+		display: block;
+		h5 a {
+		  color: #999;
+		}
+		  a:hover {
+			color: #333;
+		}
+	}
+	.content {
+		float: right;
+	}
+}
+
+
 
 /* typography */
 
@@ -109,14 +151,28 @@ li button {
   font-family: calibri;
   margin-right: 10px;
   font-size: 1.5em;
-  color: #444;
+  color: #555;
   padding-top: 9px;
-  padding-left: 10px;
+  padding-left: 5px;
   font-weight: bold;
   &:hover {
     color: #333;
     text-decoration: none;
   }
+}
+
+@media (max-width: 768px) { 
+	#logo {
+		padding-left: 0px;
+	}
+	.navbar .navbar-toggle .icon-bar {
+	    background-color: #333;
+		margin-left: 15px;
+	}
+	.navbar {
+		padding-top: 0px;
+	}
+
 }
 
 .glyphicon {

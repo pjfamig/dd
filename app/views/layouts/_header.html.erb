@@ -4,8 +4,18 @@
 			<div class="col-sm-2">
 			</div>
 			<div class="col-sm-10 header">	
+		      <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#collapsed-content">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>		
+	
+	
     <%= link_to "dailydocket.org", root_path, id: "logo" %> 
+
     <nav>
+	    <div class="collapse navbar-collapse" id="collapsed-content">
       <ul class="nav navbar-nav navbar-right">
 		<% if logged_in? %>
 		  <li><%= link_to "Users", users_path %></li>
@@ -21,9 +31,9 @@
 		 <% else %>
 		   <li><%= link_to "Login/Register", register_path %></li>
 		 <% end %>
-
-  		<li><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">Post</button></li>
+  		<li><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#postModal">Post</button></li>
       </ul>
+		</div>
     </nav>
 
 			</div>
@@ -31,8 +41,9 @@
   </div>
 </header>
 
-<!-- Modal HTML -->
-<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+
+<!-- Post Modal HTML -->
+<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
@@ -45,7 +56,8 @@
 					  <%= render 'shared/post_form' %>
 				</section>
 				<% else %>
-					Not logged in - render shared/login_form
+					  <p>Please login or <%= link_to 'register', register_path %> to continue.</p>
+					  <%= render 'shared/login_form' %>
 				<% end %>
             </div>
   <!--          <div class="modal-footer">
