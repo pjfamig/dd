@@ -7,7 +7,7 @@
 <% if @post.comments.any? %>	
 	<h5>Comments (<%= @post.comments.count %>)</h5>
 	<ol class="comments">
-	  <%= render @comments %>
+    	<%= nested_comments @comments.arrange(:order => :created_at) %>
 	</ol>
 <% end %>	
 	

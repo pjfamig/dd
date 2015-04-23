@@ -105,6 +105,18 @@ textarea {
 
 
 
+
+.nested_messages {
+  margin-left: 30px;
+}
+
+.nested_messages .nested_messages .nested_messages {
+  margin-left: 0;
+}
+
+
+
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
