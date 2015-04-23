@@ -2,7 +2,6 @@
   <%= render 'shared/error_messages', object: f.object %>
 	<div class="form-group">
 		  <%= f.hidden_field :parent_id %>
-		<%= f.label :content %>
     	<%= f.text_area :content, class: "form-control", placeholder: "Enter new comment..." %>
   	</div>
   	<div class="btn-group">

@@ -3,18 +3,14 @@
 <ol class="posts">
   <%= render @post %>
 </ol>  
-	
-<% if @post.comments.any? %>	
-	<h5>Comments (<%= @post.comments.count %>)</h5>
-	<ol class="comments">
-    	<%= nested_comments @comments.arrange(:order => :created_at) %>
-	</ol>
-<% end %>	
-	
-<% if logged_in? %>
-  <h5>Enter new comment</h5>
-	  <%= render 'shared/comment_form' %>
-<% else %>
-	<!-- Keep comment_form, but prompt for sign-up upon input? -->
-	Please <%= link_to 'login', login_path %> to post a comment. 
-<% end %>
+
+<h3>Comments (<%= @post.comments.count %>)</h3>
+
+<ol class="comments">  <%= render 'shared/comment_form' %></ol>
+
+<ol class="comments">
+  <%= nested_comments @comments.arrange(:order => :created_at) %>
+</ol>
+
+
+

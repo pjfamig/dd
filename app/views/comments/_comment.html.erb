@@ -1,10 +1,17 @@
 <li>
-  <span class="user"><%= comment.user.username %></span><br>
-  <span class="comment"><%= comment.content %></span><br>
-  <span class="timestamp">
+<div class="row">	
+  <div class="col-sm-2 user-avatar"><span class="user">
+	<%= image_tag comment.user.avatar.url(:thumb) if comment.user.avatar? %>
+  </span></div>
+<div class="col-md-10">
+	<strong><%= link_to comment.user.username, user_path(comment.user) %></strong>  <span class="comment-timestamp">
     Posted <%= time_ago_in_words(comment.created_at) %> ago.
   </span>
+	<br>
+  <span class="comment-content"><%= comment.content %></span><br>
+
 
 	<%= link_to "Reply", new_post_comment_path(comment.post_id, :parent_id => comment) %>
-
+</div>	
+</div>
 </li>

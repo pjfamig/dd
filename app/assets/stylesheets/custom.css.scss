@@ -101,19 +101,11 @@ textarea {
 	.content {
 		float: right;
 	}
+	
+	.user-avatar {
+		width: 90px;
+	}
 }
-
-
-
-
-.nested_messages {
-  margin-left: 30px;
-}
-
-.nested_messages .nested_messages .nested_messages {
-  margin-left: 0;
-}
-
 
 
 
@@ -279,13 +271,29 @@ span.picture {
 	list-style: none;
 	padding: 0px;
 	li {
-		padding-top: 5px;
-		padding-bottom: 5px;
-		padding-left: 0px;
-		padding-right: 0px;
-		border-top: 1px solid #e8e8e8;
+		padding: 10px;
+		border-top: 1px solid #e8e8e8;	
+		margin-bottom: 2px;
 	}
 }
+
+.comment-content {
+//	display: block;
+}
+
+.comment-timestamp {
+	margin-left: 5px;
+	color: #999;
+}
+
+.nested_comments {
+	margin-left: 95px;
+}
+
+.nested_comments .nested_comments .nested_comments {
+  	margin-left: 0;
+}
+
 
 
 /* forms */
