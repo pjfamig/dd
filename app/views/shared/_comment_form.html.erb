@@ -2,9 +2,18 @@
   <%= render 'shared/error_messages', object: f.object %>
 	<div class="form-group">
 		  <%= f.hidden_field :parent_id %>
-    	<%= f.text_area :content, class: "form-control", placeholder: "Enter new comment..." %>
+    	<%= f.text_area :content, class: "form-control expand", placeholder: "Enter new comment..." %>
   	</div>
   	<div class="btn-group">
-		<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+		<%= f.submit "Publish", class: "btn btn-sm btn-success" %>
 	</div>
 <% end %>
+
+<script>
+$('textarea.expand').focus(function () {
+  $(this).attr('data-default', $(this).height());
+  $(this).animate({ height: 100 }, 'slow');
+}).blur(function() {
+  $(this).animate({ height: 50 }, 'slow');
+});
+</script>

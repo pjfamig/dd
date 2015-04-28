@@ -6,4 +6,14 @@ class Post < ActiveRecord::Base
   validates :url, presence: true
   validates :headline, presence: true
   
+
+  def domain
+    if self.url.blank?
+      nil
+    else
+      pu = URI.parse(self.url)
+      pu.host.gsub(/^www\d*\./, "")
+    end
+  end
+  
 end

@@ -1,7 +1,8 @@
 <%= link_to post_path(post) do %>
 <li id="post-<%= post.id %>">
 <p>
-  <a href="<%= post.url %>"><span class="headline"><%= post.headline %></span></a>
+
+<span class="headline"><%= link_to post.headline, post.url %> <small><%= post.domain %></small></span>
  
 <span class="timestamp">
 <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>  <%= link_to post.comments.count.to_s + ' comments', post %> | 

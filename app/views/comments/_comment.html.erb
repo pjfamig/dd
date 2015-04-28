@@ -1,10 +1,15 @@
 <li>
 <div class="row">	
-  <div class="col-sm-2 user-avatar"><span class="user">
-	<%= image_tag comment.user.avatar.url(:thumb) if comment.user.avatar? %>
-  </span></div>
-<div class="col-md-10">
-	<strong><%= link_to comment.user.username, user_path(comment.user) %></strong>  <span class="comment-timestamp">
+  <div class="user-avatar">
+	<div class="user-avatar-inner">
+		<span class="user">
+		    <%= image_tag comment.user.avatar.url(:thumb)  %>
+  		</span>
+	</div>
+  </div>
+	
+	<div class="comment-body">
+	<strong><%= link_to comment.user.username, user_path(comment.user) %></strong> <span class="comment-timestamp">
     Posted <%= time_ago_in_words(comment.created_at) %> ago.
   </span>
 	<br>
