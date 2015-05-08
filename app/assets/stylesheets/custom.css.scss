@@ -15,8 +15,10 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {	
-  font-family: calibri; 
-  padding-top: 75px;
+  font-family: "helvetica neue", arial, sans-serif;
+  font-size: 9.5pt;
+  color: #333;
+  padding-top: 50px;
 }
 
 section {
@@ -35,21 +37,14 @@ textarea {
 }
 
 .container {
-	max-width: 960px;
+	max-width: 900px;
 }
 
 .header {
 	padding-left: 0px;
-	min-height: 50px;
-	border-bottom-style: solid;
-	border-bottom: double #CCC;
+	margin-top: 10px;
+//	border-bottom: double #CCC;
 	background-color: #FFF;
-	box-shadow: 0px 2px 2px -2px rgba(0,0,0,.2);
-}
-
-small {
-	color: #666;
-	font-style: italic;
 }
 
 
@@ -68,21 +63,6 @@ small {
 		padding: 20px;
 	}
 	
-
-//.sidebar {
-//   position: fixed;
-//   top: 70px;
-//   left: 0px;
-//   background-color: #e8e8e8;
-//   height: 20px;
-//   width: 100%;
-//   h5 a {
-//	color: #999;
-//   }
-//   a:hover {
-//	color: #333;
-//   }
-//}
 }
 
 .content {
@@ -155,10 +135,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
+	margin: 0px;
+	margin-bottom: 0.75em;
+	padding: 0px;
+	font-size: 14pt;
+	font-weight: bold;
 }
 
 h2 {
@@ -176,31 +157,37 @@ p {
   line-height: 1.7em;
 }
 
+
+a {
+	color: #2562dc;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 11pt;
+	text-decoration: none;
+}
+
+.header a {
+	color: #777;
+	font-size: 9pt;
+	text-decoration: none;
+}
+
 /* header */
 
 .navbar {
-	padding-top: 20px;
 	background-color: #FFF;
-}
-
-
-li button {
-	margin-top: 10px;
-	margin-left: 10px;
-	margin-bottom: 10px;
 }
 
 #logo {
   float: left;
-  font-family: calibri;
   margin-right: 10px;
-  font-size: 1.5em;
-  color: #555;
-  padding-top: 9px;
-  padding-left: 5px;
+  color: #333;
+  font-size: 11pt;
+  padding-top: 12px;
+  padding-left: 15px;
   font-weight: bold;
   &:hover {
-    color: #333;
+    color: #555;
     text-decoration: none;
   }
 }
@@ -223,25 +210,18 @@ li button {
 
 }
 
-.glyphicon {
-	color: #999;
-}
-
 
 /* posts */
 
 .posts {
+
   list-style: none;
   padding-left: 0px;
-  a {
-	font-size: 1.1em;
-	color: #1111D5;
-  }
 
   p {
 	margin: 0px;
-	padding-top: 4px;
-	padding-bottom: 4px;
+	padding-top: 2px;
+	padding-bottom: 2px;
   }
 
   .glyphicon {
@@ -249,8 +229,8 @@ li button {
   }
 
   li {
-    border-bottom: 1px solid #e8e8e8;
-	padding: 5px;
+//   border-bottom: 1px solid #e8e8e8;
+	padding: 2px;
     &:hover {
 //	  background-color: #f5f5f5;
     }
@@ -261,7 +241,6 @@ li button {
   }
   .content {
     display: block;
-    margin-left: 60px;
     img {
       display: block;
       padding: 5px 0;
@@ -269,21 +248,59 @@ li button {
   }
   .timestamp {
     color: #999;
-    font-size: 14px;
+    font-size: 8.5pt;
     display: block;
     a {
-	  font-size: 14px;
+	  font-size: 8.5pt;
 	  color: #999;
+	  font-weight: none;
 	  &:hover {
-	  color: #222;
+	  color: #333;
 	}
 	}
   }
-  .gravatar {
-    float: left;
-    margin-right: 10px;
-    margin-top: 5px;
-  }
+}
+
+.post-content {
+	display: block;
+    overflow: hidden;
+}
+div.voters {
+	float: left;
+	margin-top: 0px;
+	width: 40px;
+}
+
+
+div.voters div.score {
+	color: #aaa;
+	font-size: 9pt;
+	margin-top: 1px;
+	margin-bottom: -3px;
+	text-align: center;
+}
+
+li.story div.voters div.score {
+	font-size: 9.5pt;
+	margin-top: 2px;
+}
+
+div.voters .upvoter,
+div.voters .downvoter {
+	border-color: transparent transparent #bbb transparent;
+	border-style: solid;
+	border-width: 6px;
+	text-decoration: none;
+	width: 0px;
+	height: 0;
+	margin-bottom: 0px;
+	margin-left: 14px;
+	padding: 0;
+	display: block;
+}
+
+div.voters .upvoter {
+	border-bottom-width: 11px;
 }
 
 aside {

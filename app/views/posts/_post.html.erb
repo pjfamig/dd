@@ -1,14 +1,23 @@
 <%= link_to post_path(post) do %>
 <li id="post-<%= post.id %>">
+
 <p>
 
-<span class="headline"><%= link_to post.headline, post.url %> <small><%= post.domain %></small></span>
+<div class="voters">
+	<a class="upvoter"></a>
+	<div class="score">3</div>
+</div>
+	
+<div class="post-content">
+	<span class="headline"><%= link_to post.headline, post.url %> <small><%= post.domain %></small></span>
  
-<span class="timestamp">
-<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>  <%= link_to post.comments.count.to_s + ' comments', post %> | 
+	<span class="timestamp">
+		<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>  <%= link_to post.comments.count.to_s + ' comments', post %> | 
  posted <%= time_ago_in_words(post.created_at) %> ago
   </span>
-</p>
 
+</div>
+
+</p>
 </li>
 <% end %>
