@@ -18,7 +18,7 @@ body {
   font-family: "helvetica neue", arial, sans-serif;
   font-size: 9.5pt;
   color: #333;
-  padding-top: 50px;
+  padding-top: 65px;
 }
 
 section {
@@ -41,9 +41,9 @@ textarea {
 }
 
 .header {
-	padding-left: 0px;
+	padding-left: 12px;
 	margin-top: 10px;
-//	border-bottom: double #CCC;
+//	border-bottom: 1px solid #CCC;
 	background-color: #FFF;
 }
 
@@ -178,16 +178,24 @@ a {
 	background-color: #FFF;
 }
 
+.navbar-link {
+	padding-right: 12px;
+	&:hover {
+		color: #000;
+	}
+}
+
+
 #logo {
   float: left;
   margin-right: 10px;
   color: #333;
   font-size: 11pt;
-  padding-top: 12px;
-  padding-left: 15px;
+  padding-top: 16px;
+  padding-left: 10px;
   font-weight: bold;
   &:hover {
-    color: #555;
+    color: #000;
     text-decoration: none;
   }
 }
