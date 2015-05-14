@@ -1,3 +1,18 @@
+<li><div class="row">	
+	<div class="user-avatar">
+		<div class="user-avatar-inner">
+			<span class="user">
+				<% if logged_in? %>
+		    		<%= image_tag current_user.avatar.url(:thumb)  %>
+					<% else %>
+					<img src="/uploads/user/avatar/fallback/thumb_profile_default_pic.png">
+					<% end %>
+				</span>
+			</div>
+		</div>
+		<div class="comment-body">
+
+
 <%= form_for([@post, @comment], :html => { :role => "form" }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 	<div class="form-group">
@@ -5,9 +20,15 @@
     	<%= f.text_area :content, class: "form-control expand", placeholder: "Enter new comment..." %>
   	</div>
   	<div class="btn-group">
-		<%= f.submit "Publish", class: "btn btn-sm btn-success" %>
+		<%= f.submit "Publish", class: "btn btn-xs btn-success" %>
 	</div>
 <% end %>
+
+
+		</div>
+</div>
+</li>
+
 
 <script>
 $('textarea.expand').focus(function () {

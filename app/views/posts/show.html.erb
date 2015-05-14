@@ -4,34 +4,13 @@
   <%= render @post %>
 </ol>  
 <br>
+
 <div class="comments-section">
-
-
 <ol class="comments">
-	<h6>ALL COMMENTS (<%= @post.comments.count %>)</h6>
-
-<li><div class="row">	
-	<div class="user-avatar">
-		<div class="user-avatar-inner">
-			<span class="user">
-				<% if logged_in? %>
-		    		<%= image_tag current_user.avatar.url(:thumb)  %>
-					<% else %>
-					<img src="/uploads/user/avatar/fallback/thumb_profile_default_pic.png">
-					<% end %>
-				</span>
-			</div>
-		</div>
-		<div class="comment-body">
-  			<%= render 'shared/comment_form' %>
-		</div>
-</div>
-</li>
-</ol>
-
-<ol class="comments">
-  <%= nested_comments @comments.arrange(:order => "created_at DESC") %>
-</ol>
-
+  <h6><%= @post.comments.count %> comments</h6>
+  <%= render 'shared/comment_form' %>
+  <ol class="comments">
+    <%= nested_comments @comments.arrange(:order => "created_at DESC") %>
+  </ol>
 </div>
 
