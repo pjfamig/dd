@@ -4,5 +4,9 @@
 <% if @feed_items.any? %>
   <ol class="posts">
     <%= render @feed_items %>
+
+<p class="pagination"><%= will_paginate @feed_items, :link_separator => ' | ', :page_links => false, :previous_label => '<< Back', :next_label => 'Next >>' %></p>
+
   </ol>
 <% end %>
+
