@@ -3,13 +3,14 @@
   <div class="user-avatar">
 	<div class="user-avatar-inner">
 		<span class="user">
-		    <%= image_tag comment.user.avatar.url(:thumb)  %>
+		    <%= image_tag comment.user.avatar.url(:thumb), height: "35px"  %>
   		</span>
 	</div>
   </div>
 	
-	<div class="comment-body">
-	<strong><%= link_to comment.user.username, user_path(comment.user) %></strong> <span class="comment-timestamp">
+
+<div class="comment-body">
+  <%= link_to comment.user.username, user_path(comment.user) %> <span class="comment-timestamp">
     Posted <%= time_ago_in_words(comment.created_at) %> ago.
   </span>
 

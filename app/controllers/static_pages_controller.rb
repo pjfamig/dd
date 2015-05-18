@@ -12,5 +12,6 @@ class StaticPagesController < ApplicationController
   end
   
   def jobs
+    
   end
 end

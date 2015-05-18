@@ -18,7 +18,7 @@ body {
   font-family: "helvetica neue", arial, sans-serif;
   font-size: 9.5pt;
   color: #333;
-  margin-top: 70px;
+  padding-top: 60px;
 }
 
 section {
@@ -41,15 +41,15 @@ textarea {
 }
 
 .header {
-	padding-top: 10px;
+//	padding-top: 10px;
 	margin-top: 10px;
 //	border-bottom: 1px solid #CCC;
 	background-color: #FFF;
 }
 
 .row {
-	margin-left: 0px;
-	margin-right: 0px;
+//	margin-left: 0px;
+//	margin-right: 0px;
 }
 
 .domain {
@@ -150,6 +150,12 @@ textarea {
     overflow: hidden;
 	padding-left: 15px;
 	padding-right: 5px;
+	
+	a {
+		color: #555;
+		font-size: 10pt;
+		font-weight: normal;
+	}
 }
 
 
@@ -204,6 +210,7 @@ a {
 
 .navbar {
 	background-color: #FFF;
+	margin-bottom: 0px;
 }
 
 .navbar-link {
@@ -244,6 +251,7 @@ a {
 .comments-section {
 	padding-left: 15px;
 	padding-right: 15px;
+	width: 600px;
 }
 
 /* posts */
