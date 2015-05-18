@@ -5,7 +5,7 @@
 				<% if logged_in? %>
 		    		<%= image_tag current_user.avatar.url(:thumb)  %>
 					<% else %>
-					<img src="/uploads/user/avatar/fallback/thumb_profile_default_pic.png">
+					<img src="/uploads/user/avatar/fallback/thumb_profile_default_pic.png", height="35px">
 					<% end %>
 				</span>
 			</div>

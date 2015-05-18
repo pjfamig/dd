@@ -12,6 +12,12 @@
 	<strong><%= link_to comment.user.username, user_path(comment.user) %></strong> <span class="comment-timestamp">
     Posted <%= time_ago_in_words(comment.created_at) %> ago.
   </span>
+
+	<% if current_user?(comment.user) %> 
+    <%= link_to "delete", post_comment_path(comment.post_id, comment), method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: comment.content %>
+  <% end %>
 	<br>
   <span class="comment-content"><%= comment.content %></span><br>
 

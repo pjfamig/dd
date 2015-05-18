@@ -8,11 +8,19 @@
 </div>
 	
 <div class="post-content">
-	<span class="headline"><%= link_to post.headline, post.url %> <small><%= post.domain %></small></span>
+	<span class="headline"><%= link_to post.headline, post.url %> <small class="domain"><%= post.domain %></small></span>
  
 	<span class="timestamp">
 		<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>  <%= link_to post.comments.count.to_s + ' comments', post %> | 
  posted <%= time_ago_in_words(post.created_at) %> ago
+
+ <% if logged_in? && current_user.admin? %>
+   | <%= link_to "delete", post, method: :delete,
+                                 data: { confirm: "Are you sure?" } %>
+ <% end %>
+
+
+
   </span>
 
 </div>

@@ -55,8 +55,6 @@ class UsersController < ApplicationController
                                    :password_confirmation, :avatar)
     end
     
-  
-    
     # Confirms the correct user.
     def correct_user
       @user = User.find(params[:id])

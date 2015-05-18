@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create]
+  before_action :logged_in_user, only: [:new, :create, :destroy]
+  before_action :correct_user,   only: :destroy
+  
     
   def new
     @post = Post.find(params[:post_id])
@@ -22,12 +24,22 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment.destroy
+    @post = Post.find(params[:post_id])
+    flash[:success] = "Comment deleted."
+    redirect_to post_path(@post)
   end
 
   private
 
     def comment_params
       params.require(:comment).permit(:content, :parent_id)
+    end
+    
+    # Confirms the correct user.
+    def correct_user
+      @comment = current_user.comments.find_by(id: params[:id])
+      redirect_to root_url if @comment.nil?
     end
 
 end
