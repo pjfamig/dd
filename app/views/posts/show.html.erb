@@ -8,7 +8,6 @@
 
 <div class="comments-section">
 <ol class="comments">
-  <h6><%= @post.comments.count %> comments</h6>
   <%= render 'shared/comment_form' %>
   <ol class="comments">
     <%= nested_comments @comments.arrange(:order => "created_at DESC") %>

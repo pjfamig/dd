@@ -7,7 +7,7 @@ Dd::Application.routes.draw do
 
   get 'about'       => 'static_pages#about'
   get 'rules'       => 'static_pages#rules'
-  get 'jobs'        => 'static_pages#jobs'
+#  get 'jobs'        => 'static_pages#jobs'
   get 'register'    => 'users#new'
   get    'login'    => 'sessions#new'
   post   'login'    => 'sessions#create'
@@ -15,6 +15,7 @@ Dd::Application.routes.draw do
   
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :users
+  resources :jobs
   resources :posts do
     resources :comments
   end

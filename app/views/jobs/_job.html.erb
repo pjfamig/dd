@@ -1,0 +1,8 @@
+<li id="job-<%= job.id %>">
+  <span class="content"><%= job.company %></span>
+  <span class="content"><%= job.position %></span>
+  <span class="content"><%= job.location %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(job.created_at) %> ago.
+  </span>
+</li>
