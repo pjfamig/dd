@@ -13,8 +13,12 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.user = current_user
     if @comment.save
-      flash[:success] = "Comment created!"
-      redirect_to post_path(@post)
+      respond_to do |format|
+        format.html { redirect_to post_path(@post) }
+        format.js
+      end
+      # => flash[:success] = "Comment created!" 
+      # => redirect_to post_path(@post)
     else
       flash[:danger] = "Comment cannot be blank!"
        #redirect_to post_path(@post)

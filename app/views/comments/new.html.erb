@@ -1,6 +1,23 @@
-<%= render @comment.parent if @comment.parent %>
 
+<ol class="posts">
+  <%= render @post %>
+</ol>  
+<br>
+
+<div class="col-md-8 comments-section">
+
+<ol class="comments">
+<%= render @comment.parent if @comment.parent %>
+</ol>
+
+<ol class="comments">
 <%= render 'shared/comment_form' %>
+</ol>
 
 <br>
 <p><%= link_to "Back to post", post_path(@comment.post_id) %></p>
+
+</div>
+<div class="col-md-4 col-md-offset-8">
+</div>
+

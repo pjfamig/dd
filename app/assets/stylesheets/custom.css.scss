@@ -61,7 +61,7 @@ textarea {
 
 @media (max-width: 768px) { 
 	body {
-		padding-top: 0px;
+		padding-top: 60px;
 	}
 
 	.posts li {
@@ -73,7 +73,20 @@ textarea {
 	.posts p {
 		padding: 20px;
 	}
-
+	.header {
+		border-bottom: 1px solid #CCC;
+	}
+	
+	.comments li {
+		padding: 0px;
+		&:hover {
+			background-color: #f5f5f5;
+		};
+	}
+	.comments-section {
+		
+	}
+	
 }
 
 .content {
@@ -99,7 +112,7 @@ textarea {
 	}
 	
 	.nested_comments {
-		margin-left: 65px;
+		margin-left: 50px;
 	}
 
 	.nested_comments .nested_comments .nested_comments {
@@ -109,8 +122,16 @@ textarea {
 	.expand {
 		width: 500px;
 	}
+	.comments-section {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
 }
 
+
+.reply_form {
+	padding-top: 10px;
+}
 
 .pagination {
 	margin-left: 40px;
@@ -248,10 +269,7 @@ a {
 	}
 }
 
-.comments-section {
-	padding-left: 15px;
-	padding-right: 15px;
-}
+
 
 /* posts */
 
@@ -383,7 +401,7 @@ span.picture {
 
 textarea.expand {
     height: 50px;
-	max-width: 494px;
+	width: 100%;
 }
 
 

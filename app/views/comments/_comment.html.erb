@@ -1,16 +1,17 @@
 <li>
-<div class="row">	
-  <div class="user-avatar">
-	<div class="user-avatar-inner">
-		<span class="user">
-		    <%= image_tag comment.user.avatar.url(:thumb), height: "35px"  %>
-  		</span>
-	</div>
-  </div>
+<div class="row">
 	
-
+<div class="user-avatar">
+  <div class="user-avatar-inner">
+    <span class="user">
+      <%= image_tag comment.user.avatar.url(:thumb), height: "35px"  %>
+  	</span>
+  </div>
+</div>
+	
 <div class="comment-body">
-  <%= link_to comment.user.username, user_path(comment.user) %> <span class="comment-timestamp">
+  <%= link_to comment.user.username, user_path(comment.user) %> 
+  <span class="comment-timestamp">
     Posted <%= time_ago_in_words(comment.created_at) %> ago.
   </span>
 
@@ -22,7 +23,10 @@
 	<br>
   <span class="comment-content"><%= comment.content %></span><br>
 
+<%= link_to "Reply", new_post_comment_path(comment.post_id, :parent_id => comment), id: "reply-to-post-" + comment.id.to_s, remote: true %>
 
-	<%= link_to "Reply", new_post_comment_path(comment.post_id, :parent_id => comment) %></div>	
 </div>
+
+	
+</div> 
 </li>
