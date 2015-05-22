@@ -6,11 +6,13 @@
 <br>
 
 
-<div class="comments-section">
+<div class="col-md-8 comments-section">
 <ol class="comments">
   <%= render 'shared/comment_form' %>
   <ol class="comments">
     <%= nested_comments @comments.arrange(:order => "created_at DESC") %>
   </ol>
+</div>
+<div class="col-md-4 col-md-offset-8">
 </div>
 

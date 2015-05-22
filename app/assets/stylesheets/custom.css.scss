@@ -251,7 +251,6 @@ a {
 .comments-section {
 	padding-left: 15px;
 	padding-right: 15px;
-	width: 600px;
 }
 
 /* posts */
@@ -384,6 +383,7 @@ span.picture {
 
 textarea.expand {
     height: 50px;
+	max-width: 494px;
 }
 
 

@@ -23,7 +23,6 @@
   <span class="comment-content"><%= comment.content %></span><br>
 
 
-	<%= link_to "Reply", new_post_comment_path(comment.post_id, :parent_id => comment) %>
-</div>	
+	<%= link_to "Reply", new_post_comment_path(comment.post_id, :parent_id => comment) %></div>	
 </div>
 </li>
