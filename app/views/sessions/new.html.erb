@@ -1,9 +1,12 @@
 <% provide(:title, "Login") %>
-<h1>Login</h1>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-4 login">
+	<h5>Welcome back!</h5>
 	  <%= render 'shared/login_form' %>
-    <p>New user? <%= link_to "Register!", register_path %></p>
+	<br>
+    <p>New user? <%= link_to "Request an invite!", register_path %></p>
+  </div>
+  <div class="col-md-8 col-md-offset-4">
   </div>
 </div>

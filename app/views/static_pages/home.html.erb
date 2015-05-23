@@ -1,5 +1,9 @@
 <% provide(:title, "Home") %>
 
+<div class="alert alert-info alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Welcome!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+</div>
 
 <% if @feed_items.any? %>
   <ol class="posts">

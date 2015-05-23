@@ -1,12 +1,14 @@
 <% provide(:title, @post.headline.html_safe) %>
 
-<ol class="posts">
+<div class="show-post">
+<ol class="posts post-fixed">
   <%= render @post %>
 </ol>  
+</div>
 <br>
 
 
-<div class="col-md-8 comments-section">
+<div class="col-md-9 comments-section">
 
 <ol class="comments">
   <%= render 'shared/comment_form' %>
@@ -17,6 +19,6 @@
 
 </div>
 
-<div class="col-md-4 col-md-offset-8">
+<div class="col-md-3 col-md-offset-9">
 </div>
 

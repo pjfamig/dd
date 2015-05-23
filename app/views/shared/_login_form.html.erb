@@ -1,7 +1,8 @@
 <%= form_for(:session, url: login_path) do |f| %>
 
+<div class="input-group input-group-sm">
   <%= f.email_field :email, class: 'form-control', placeholder: "Email"  %>
   <%= f.password_field :password, class: 'form-control', placeholder: "Password" %>
-
-  <%= f.submit "Login", class: "btn btn-primary" %>
+</div>
+  <%= f.submit "Login", class: "btn btn-xs btn-primary login-button" %>
 <% end %>

@@ -11,8 +11,7 @@
 	
 <div class="comment-body">
   <%= link_to comment.user.username, user_path(comment.user) %> 
-  <span class="comment-timestamp">
-    Posted <%= time_ago_in_words(comment.created_at) %> ago.
+  <span class="comment-timestamp">&bull; &nbsp;<%= time_ago_in_words(comment.created_at) %> ago
   </span>
 
 	<% if current_user?(comment.user) %> 
@@ -23,8 +22,14 @@
 	<br>
   <span class="comment-content"><%= comment.content %></span><br>
 
-<%= link_to "Reply", new_post_comment_path(comment.post_id, :parent_id => comment), id: "reply-to-post-" + comment.id.to_s, remote: true %>
-
+<div class="voters">
+<a class="upvoter"></a>
+</div>
+<% if logged_in? %>
+	<%= link_to "Reply", new_post_comment_path(comment.post_id, :parent_id => comment), id: "reply-to-post-" + comment.id.to_s, remote: true, :class => "reply-link" %>
+<% else %>
+	<%= link_to "Reply", login_path, :class => "reply-link"  %>
+<% end %>
 </div>
 
 	
