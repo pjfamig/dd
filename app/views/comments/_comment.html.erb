@@ -20,7 +20,7 @@
                                      title: comment.content %>
   <% end %>
 	<br>
-  <span class="comment-content"><%= comment.content %></span><br>
+  <span class="comment-content"><%= markdown(comment.content) %></span>
 
 <div class="voters">
 <a class="upvoter"></a>

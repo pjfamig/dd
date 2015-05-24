@@ -205,16 +205,18 @@ textarea {
 	
 	a {
 		color: #2562dc;
-		font-size: 11pt;
-		font-weight: normal;
+		font-size: 9pt;
+		font-weight: bold;
 	}
 	
 	.reply-link {
-		font-size: 9pt;
 		color: #999;
 	}
 	.reply-link:hover {
 		color: #555;
+	}
+	
+	p {
 	}
 }
 
@@ -249,8 +251,9 @@ h5 {
 
 
 p {
-  font-size: 1.1em;
-  line-height: 1.7em;
+  // font-size: 1.1em;
+  // line-height: 1.7em;
+  padding-bottom: 0px;
 }
 
 
@@ -447,8 +450,7 @@ textarea.expand {
 
 
 .comment-content {
-//	display: block;
-
+	
 }
 
 .comment-timestamp {

@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
     
   mount_uploader :avatar, AvatarUploader
   
+
   # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -63,6 +64,10 @@ class User < ActiveRecord::Base
     reset_sent_at < 2.hours.ago
   end
   
+  
+  def to_param
+    "#{id} #{username}".parameterize
+  end
   
   private
   
