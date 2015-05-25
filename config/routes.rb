@@ -7,6 +7,9 @@ Dd::Application.routes.draw do
 
   get 'about'       => 'static_pages#about'
   get 'rules'       => 'static_pages#rules'
+  get 'tags/:tag', to: 'static_pages#home', as: :tag
+
+
 #  get 'jobs'        => 'static_pages#jobs'
   get 'register'    => 'users#new'
   get    'login'    => 'sessions#new'

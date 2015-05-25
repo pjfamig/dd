@@ -36,7 +36,7 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:headline, :url)
+      params.require(:post).permit(:headline, :url, :tag_list)
     end    
     
     # Confirms an admin user.

@@ -12,6 +12,16 @@ gem 'jquery-rails',         '3.0.4'
 gem 'turbolinks',           '2.3.0'
 gem 'jbuilder',             '2.2.3'
 gem 'sdoc',                 '0.4.0', group: :doc
+gem 'ancestry'
+gem 'rmagick', :require => 'RMagick'
+gem 'carrierwave',          '0.10.0'
+gem 'mini_magick',          '3.8.0'
+gem 'fog',                  '1.23.0'
+gem 'bootstrap-sass',       '3.2.0.0'
+gem 'bootstrap-modal-rails'
+gem 'will_paginate',           '3.0.7'
+gem 'redcarpet'
+gem 'acts-as-taggable-on'
 
 group :development, :test do
   gem 'sqlite3',            '1.3.9'
@@ -30,13 +40,3 @@ group :production do
   gem 'puma',           '2.11.1'
 end
 
-gem 'ancestry'
-gem 'rmagick', :require => 'RMagick'
-gem 'carrierwave',          '0.10.0'
-gem 'mini_magick',          '3.8.0'
-gem 'fog',                  '1.23.0'
-gem 'bootstrap-sass',       '3.2.0.0'
-
-gem 'bootstrap-modal-rails'
-gem 'will_paginate',           '3.0.7'
-gem 'redcarpet'

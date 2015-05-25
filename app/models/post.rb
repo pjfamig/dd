@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   validates :user_id, presence: true
   validates :url, presence: true
   validates :headline, presence: true
-  
+  acts_as_taggable
 
   def domain
     if self.url.blank?

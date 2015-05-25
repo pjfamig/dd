@@ -363,11 +363,11 @@ a {
     display: block;
     a {
 	  font-size: 8.5pt;
-	  color: #999;
 	  font-weight: none;
+	  color: #999;
 	  &:hover {
-	  color: #333;
-	}
+	    color: #333;
+	  }
 	}
   }
 }
@@ -382,6 +382,19 @@ div.voters {
 	width: 40px;
 }
 
+.tag {
+  font-size: 8.5pt;  
+  background-color: #DAF8DA;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #888;	
+  &:hover {
+    color: #888;	
+	background-color: #CFDCD4;
+	text-decoration: none;
+  }
+}
 
 div.voters div.score {
 	color: #aaa;
