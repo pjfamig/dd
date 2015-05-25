@@ -175,6 +175,12 @@ textarea {
 	}
 }
 
+span.commentable:hover {
+	background-color: yellow;
+	display:inline-block;
+	cursor:pointer;
+}
+
 .user-avatar {
 	width: 35px;
 	height: 35px;
