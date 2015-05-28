@@ -22,6 +22,7 @@ gem 'bootstrap-modal-rails'
 gem 'will_paginate',           '3.0.7'
 gem 'redcarpet'
 gem 'acts-as-taggable-on'
+gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4'
 
 group :development, :test do
   gem 'sqlite3',            '1.3.9'
