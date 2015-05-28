@@ -22,9 +22,12 @@
 	<br>
   <span class="comment-content"><%= markdown(comment.content) %></span>
 
+
 <div class="voters">
-<a class="upvoter"></a>
+	<%= link_to "", vote_post_comment_path(comment.post_id, comment, type: "up"), method: "post", :class => "upvoter" %>
+	<div class="score"><%= comment.reputation_for(:comment_votes).to_i %></div>
 </div>
+
 <% if logged_in? %>
 	<%= link_to "Reply", new_post_comment_path(comment.post_id, :parent_id => comment), id: "reply-to-post-" + comment.id.to_s, remote: true, :class => "reply-link" %>
 <% else %>

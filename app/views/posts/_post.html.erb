@@ -3,8 +3,8 @@
 <p>
 
 <div class="voters">
-	<a class="upvoter"></a>
-	<div class="score">3</div>
+	<%= link_to "", vote_post_path(post, type: "up"), method: "post", :class => "upvoter" %>
+	<div class="score"><%= post.reputation_for(:post_votes).to_i %></div>
 </div>
 	
 <div class="post-content">

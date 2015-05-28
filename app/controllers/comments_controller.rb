@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :destroy, :vote]
   before_action :correct_user,   only: :destroy
   
     
@@ -32,6 +32,14 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     flash[:success] = "Comment deleted."
     redirect_to post_path(@post)
+  end
+  
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @comment = Comment.find(params[:id])
+    @comment.add_or_update_evaluation(:comment_votes, value, current_user)
+    flash[:success] = "Thank you for voting!"
+    redirect_to :back
   end
 
   private

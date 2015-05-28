@@ -20,6 +20,9 @@ Dd::Application.routes.draw do
   resources :users
   resources :jobs
   resources :posts do
-    resources :comments
+    member { post :vote } 
+    resources :comments do 
+      member { post :vote }
+    end
   end
 end
