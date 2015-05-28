@@ -175,10 +175,25 @@ textarea {
 	}
 }
 
+span.commentable {
+	position: relative;
+}
+
 span.commentable:hover {
 	background-color: yellow;
-	display:inline-block;
-	cursor:pointer;
+	display: inline-block;
+	cursor: pointer;
+}
+
+#comment-1 {
+	position: absolute;
+	left: 650px;
+}
+
+#comment-2 {
+	position: absolute;
+	top: 100px;
+	left: 500px;
 }
 
 .user-avatar {
