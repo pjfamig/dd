@@ -6,6 +6,10 @@ class Post < ActiveRecord::Base
   validates :url, presence: true
   validates :headline, presence: true
   acts_as_taggable
+  
+  has_reputation :post_votes, 
+    :source => :user,
+    :source_of => { :reputation => :posting_skill, :of => :user }  
 
   def domain
     if self.url.blank?

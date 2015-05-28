@@ -8,4 +8,8 @@ class Comment < ActiveRecord::Base
   
   has_ancestry 
   
+  has_reputation :comment_votes, 
+    :source => :user,
+    :source_of => { :reputation => :commenting_skill, :of => :user }
+
 end

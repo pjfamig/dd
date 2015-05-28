@@ -15,6 +15,16 @@ class User < ActiveRecord::Base
     
   mount_uploader :avatar, AvatarUploader
   
+  has_reputation :karma,
+    :source => [
+      { :reputation => :posting_skill, :weight => 5 },
+      { :reputation => :commenting_skill }]
+      
+  has_reputation :posting_skill,
+      :source => { :reputation => :post_votes, :of => :posts }
+  
+  has_reputation :commenting_skill,
+      :source => { :reputation => :comment_votes, :of => :comments }
 
   # Returns the hash digest of the given string.
   def User.digest(string)
