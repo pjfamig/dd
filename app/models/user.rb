@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
   has_many :jobs
+  has_many :opinions
   attr_accessor :remember_token, :reset_token
   before_save { self.email = email.downcase }
   validates :username,  presence: true, length: { maximum: 50 }

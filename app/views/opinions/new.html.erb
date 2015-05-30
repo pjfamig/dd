@@ -1,0 +1,11 @@
+<%= form_for(@opinion) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_field :name, placeholder: "Case name", class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Enter opinion content", class: 'form-control' %>
+  </div>
+
+  <%= f.submit "Upload", class: "btn btn-primary" %>
+<% end %>
