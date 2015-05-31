@@ -1,11 +1,18 @@
+
+<h4>Enter new court opinion</h4>
+
+<div class="row">
+  <div class="col-md-8">
 <%= form_for(@opinion) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.text_field :name, placeholder: "Case name", class: 'form-control' %>
   </div>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Enter opinion content", class: 'form-control' %>
+    <%= f.text_area :content, placeholder: "Enter opinion content", class: 'form-control', rows: "10" %>
   </div>
 
   <%= f.submit "Upload", class: "btn btn-primary" %>
 <% end %>
+  </div>
+</div>

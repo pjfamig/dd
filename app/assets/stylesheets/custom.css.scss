@@ -175,26 +175,18 @@ textarea {
 	}
 }
 
-span.commentable {
-	position: relative;
-}
 
 span.commentable:hover {
 	background-color: yellow;
-	display: inline-block;
+//	display: inline-block;
 	cursor: pointer;
 }
 
-#comment-1 {
-	position: absolute;
-	left: 650px;
+span.clicked-comment {
+	background-color: yellow;
 }
 
-#comment-2 {
-	position: absolute;
-	top: 100px;
-	left: 500px;
-}
+
 
 .user-avatar {
 	width: 35px;
@@ -438,8 +430,14 @@ div.voters .downvoter {
 	display: block;
 }
 
+
+
 div.voters .upvoter {
 	border-bottom-width: 11px;
+}
+
+div.voters .voted {	
+	border-color: transparent transparent #ff9900 transparent;
 }
 
 aside {

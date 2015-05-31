@@ -1,0 +1,2 @@
+$("#voter-<%= @post.id %>").addClass("voted");
+$("#score-<%= @post.id %>").html("<%= @post.reputation_for(:post_votes).to_i %>");

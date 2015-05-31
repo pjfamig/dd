@@ -22,6 +22,7 @@ class OpinionsController < ApplicationController
 
   def show
     @opinion = Opinion.find(params[:id])
+    @comment = Comment.new 
   end
   
   def edit

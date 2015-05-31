@@ -1,1 +1,3 @@
- +$('#reply-to-post-<%= params[:parent_id] %>').hide().after('<%= j render("shared/comment_form") %>'); 
+$('#reply-to-post-<%= params[:parent_id] %>').after('<%= j render("shared/comment_form") %>');
+
+ 

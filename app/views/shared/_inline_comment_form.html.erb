@@ -1,0 +1,29 @@
+
+<li id="inline-comment-form"><div class="row">	
+	<div class="user-avatar">
+		<div class="user-avatar-inner">
+			<span class="user">
+				<% if logged_in? %>
+		    		<%= image_tag current_user.avatar.url(:thumb)  %>
+				<% else %>
+					<img src="/uploads/user/avatar/fallback/thumb_profile_default_pic.png", height="35px">
+				<% end %>
+				</span>
+			</div>
+		</div>
+		<div class="comment-body">
+
+
+<%= form_for([@opinion, @comment], remote: true, :html => { :role => "form" }) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+	<div class="form-group">
+		  <%= f.hidden_field :parent_id %>
+    	<%= f.text_area :content, class: "form-control expand", placeholder: "Enter new comment..." %>
+  	</div>
+  	<div class="btn-group">
+		<%= f.submit "Publish", class: "btn btn-xs btn-success" %>
+	</div>
+<% end %>
+		</div>	
+</div>
+</li>

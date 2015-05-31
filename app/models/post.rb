@@ -3,7 +3,6 @@ class Post < ActiveRecord::Base
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
-  validates :url, presence: true
   validates :headline, presence: true
   acts_as_taggable
   
@@ -22,5 +21,19 @@ class Post < ActiveRecord::Base
   
   def to_param
     "#{id} #{headline}".parameterize
+  end
+  
+  def evaluation_value(user, feed_item)
+    if @up_voted = ReputationSystem::Evaluation.where(:reputation_name => "post_votes", 
+            :value => "1.0", :source_id => user.id, :source_type => user.class.name,
+            :target_id => feed_item.id, :target_type => feed_item.class.name).exists?
+      "upvoted"
+    elsif @down_voted = ReputationSystem::Evaluation.where(:reputation_name => "post_votes", 
+            :value => "-1.0", :source_id => user.id, :source_type => user.class.name,
+            :target_id => feed_item.id, :target_type => feed_item.class.name).exists?
+      "downvoted"
+    else
+      nil
+    end
   end
 end

@@ -1,10 +1,15 @@
 <li id="post-<%= post.id %>">
-
 <p>
-
 <div class="voters">
-	<%= link_to "", vote_post_path(post, type: "up"), method: "post", :class => "upvoter" %>
-	<div class="score"><%= post.reputation_for(:post_votes).to_i %></div>
+	<% if current_user && post.evaluation_value(current_user, post) == "upvoted" %>
+	<%= link_to "", vote_post_path(post, type: "up"), method: "post", class: "upvoter voted", remote: true, id: "voter-" + post.id.to_s %>
+	<% else %>
+	<%= link_to "", vote_post_path(post, type: "up"), method: "post", class: "upvoter", remote: true, id: "voter-" + post.id.to_s %>
+	<% end %>
+	
+	<div class="score" id="score-<%= post.id %>" >
+		<%= post.reputation_for(:post_votes).to_i %>
+	</div>
 </div>
 	
 <div class="post-content">
@@ -12,7 +17,11 @@
 		<% if post.tags.any? %>
 	   		<span class="tags"><%= raw post.tag_list.map { |t| link_to t.titleize, tag_path(t), class: "tag" }.join(' ') %></span>
 		<% end %>
-	 	<small class="domain"><%= post.domain %></small>
+	 	<% if post.url? %>
+			<small class="domain">
+				<%= post.domain %>
+			</small>
+		<% end %>
 	</span>	
  
 	<span class="timestamp">
@@ -24,10 +33,6 @@
                                  data: { confirm: "Are you sure?" } %>
  <% end %>
 	</span>
-
-
-
 </div>
-
 </p>
 </li>
