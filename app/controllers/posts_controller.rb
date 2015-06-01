@@ -35,14 +35,14 @@ class PostsController < ApplicationController
     
   def vote
     value = params[:type] == "up" ? 1 : -1
-    @post = Post.find(params[:id])
-    @post.add_or_update_evaluation(:post_votes, value, current_user)
+      @post = Post.find(params[:id])
+      @post.add_or_update_evaluation(:post_votes, value, current_user)
     # flash[:success] = "Thank you for voting!"
     # redirect_to :back
-    respond_to do |format|
-      format.html { redirect_to :back }
-      format.js
-    end
+      respond_to do |format|
+        format.html { redirect_to :back }
+        format.js
+      end
   end
   
   private

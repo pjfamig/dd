@@ -145,6 +145,12 @@ textarea {
 		//margin: 70px auto;
 		//background: #CCC;
 	}
+	
+
+}
+
+
+.opinion-section {
 }
 
 .show-post {
@@ -471,6 +477,16 @@ span.picture {
 	li {
 		padding: 10px;
 		border-top: 1px solid #e8e8e8;	
+		margin-bottom: 2px;
+	}
+}
+
+.inline-comments {
+	list-style: none;
+	padding: 0px;
+	li {
+		padding-left: 10px;
+		padding-right: 10px;
 		margin-bottom: 2px;
 	}
 }

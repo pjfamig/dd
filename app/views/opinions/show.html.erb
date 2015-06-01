@@ -1,12 +1,13 @@
 <% provide(:title, @opinion.name) %>
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-sm-9">
     <h4><%= @opinion.name %></h4>
     <p><%= markdown(@opinion.content) %></p>
     <small><%= link_to "Edit", edit_opinion_path(@opinion) %></small>
   </div>
-  <div class="col-md-4 col-md-8-offset">
-	<ol class="comments">
+  <div class="col-sm-3 col-sm-9-offset">
+	
+  <ol class="inline-comments">
 	<li id="inline-comment-form" style="display: none;">
 		<div class="row">	
 		<div class="user-avatar">
@@ -48,11 +49,11 @@ $('span.commentable').click(function () {
     var width = $(this).outerWidth();
 
 	//show the comment form next to span
-	
+	$('#inline-comment-form').hide();
 	$('#inline-comment-form').css({
 		position: "absolute",
 	    top: pos.top + "px",
-	}).show();
+	}).slideDown();
 });
 
 $('textarea.expand').focus(function () {
